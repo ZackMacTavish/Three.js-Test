@@ -40,7 +40,7 @@ function init() {
  ///////////2nd GEOMETRY
         
       const geometry1 = new THREE.DodecahedronGeometry( 1, 0, 0);
-      const texture2 = new THREE.TextureLoader().load('textures/6.jpg');
+      const texture2 = new THREE.TextureLoader().load('textures/8.jpg');
         const material1 = new THREE.MeshBasicMaterial({ map: texture2 });
         
         
@@ -58,7 +58,7 @@ function init() {
         ////////////////////3rd geometry //OctahedronBufferGeometry
 
         const geometry2 = new THREE.OctahedronBufferGeometry();
-      const texture3 = new THREE.TextureLoader().load('textures/6.jpg');
+      const texture3 = new THREE.TextureLoader().load('textures/8.jpg');
         const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
         
         
