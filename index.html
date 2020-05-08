@@ -6,18 +6,89 @@
     <meta name http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Three.js Landing Page</title>
     <style>
+
+        * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+        }
 body {
     margin: 0;
+  
 
 }
 
 canvas {
-    display: block;
+    display: grid;
+    z-index: -1;
+    
+}
+
+.text {
+display: grid;
+position: absolute;
+left: 20%;
+top: 45vh;
+z-index: 3;
+color: white;
+font-family: 'noahbold';
+font-size: 90px;
+}
+
+@font-face {
+    font-family: 'noahbold';
+    src: url('./fonts/noah-bold-webfont.woff2') format('woff2'),
+         url('./fonts/noah-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+nav{
+    position: absolute;
+    min-height: 15vh;
+    max-width: 100%;
+    color: white;
+    align-items: center;
+    background-color: #1b76ff;
+    min-width: 15vw;
+    margin-left: 4%;
+    margin-top: 4%;
+}
+
+.hamburger {
+    z-index: 5;
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 0;
+    margin-right: 4%;
+    margin-top: 4%;
+    
+    
+}
+
+#logo {
+    float: left;
+margin-top: 0%;
+margin-left: 0%;
+font-size: 24px;
+font-family: 'noahbold';
+
 }
     </style>
 </head>
 <body>
+    <header>
+        <img class="hamburger" src="./img/Hamburger-01.svg" alt="hamburger">
+        <nav>
+            <h3 id="logo">MacTavish Design</h3>
+           
+        </nav>
+    </header>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js" integrity="sha256-QIc9BNSs4VKcUDsQBT/mwJwE6LpKHqrLB6HqF/oHM2g=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <h1 class='text'>Dream Big</h1>
 </body>
 </html>
