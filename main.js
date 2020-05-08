@@ -1,4 +1,4 @@
-let scene, camera, renderer, cube, dodecahedron;
+let scene, camera, renderer, cube, dodecahedron, octahedron;
 
 function init() {
 
@@ -28,14 +28,14 @@ function init() {
 	// Create material with texture
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
-    const geometry = new THREE.BoxGeometry( 3, 3, 3);
+    const geometry = new THREE.BoxGeometry( 2, 2, 2);
     
  //const material = new THREE.MeshBasicMaterial({ color: 0x3a89ff });
 
  cube = new THREE.Mesh( geometry, material );
  scene.add( cube );
- cube.position.x += 5;
- cube.position.y += -3.5;
+ //cube.position.x += 5;
+ //cube.position.y += -3.5;
 
  ///////////2nd GEOMETRY
         
@@ -46,9 +46,33 @@ function init() {
         
         //dodecahedron.position.y += 1;
         //dodecahedron.position.x += 1;
+        
 
         dodecahedron = new THREE.Mesh( geometry1, material1 );
         scene.add( dodecahedron );
+        dodecahedron.position.x += 6;
+        dodecahedron.position.y += -4;
+        dodecahedron.scale.multiplyScalar(3);
+
+
+        ////////////////////3rd geometry //OctahedronBufferGeometry
+
+        const geometry2 = new THREE.OctahedronBufferGeometry();
+      const texture3 = new THREE.TextureLoader().load('textures/6.jpg');
+        const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+        
+        
+        //dodecahedron.position.y += 1;
+        //dodecahedron.position.x += 1;
+        
+
+        octahedron = new THREE.Mesh( geometry2, material2 );
+        scene.add( octahedron );
+        octahedron.position.x += 4;
+        octahedron.position.y += 1;
+        octahedron.scale.multiplyScalar(0.5);
+
+
     
     camera.position.z = 5;
     //camera.position.x = 1;
@@ -62,8 +86,11 @@ function init() {
 function animate() {
     requestAnimationFrame( animate );
 
-    dodecahedron.rotation.x += 0.01;
-    dodecahedron.rotation.y += 0.01;
+    octahedron.rotation.x += 0.003;
+    octahedron.rotation.y += 0.003;
+
+    dodecahedron.rotation.x += 0.001;
+    dodecahedron.rotation.y += 0.001;
 
     
     cube.rotation.x += 0.005;
